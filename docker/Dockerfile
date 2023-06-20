@@ -1,18 +1,13 @@
 # Utiliser une image de base contenant Nginx
-FROM nginx:latest
-
-# Définir le répertoire de travail
-WORKDIR /usr/share/nginx/html
-
-# Supprimer le contenu par défaut du répertoire HTML de Nginx
-RUN rm -rf ./*
+FROM ubuntu:18.04
 
 # Cloner le référentiel GitHub de votre application web dans le conteneur
-RUN apt-get update && apt-get install -y git
-RUN git clone https://github.com/lucasggit/lucasggit.github.io.git .
+RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y git nginx
+RUN rm -rf /var/www/html/*
+RUN git clone https://github.com/lucasggit/lucasggit.github.io.git /var/www/html/
 
-# Exposer le port 80 pour le trafic HTTP
-EXPOSE 8080
+# Exposer le port 8080 pour le trafic HTTP
+EXPOSE 80
 
 # Démarrer le serveur Nginx lors du lancement du conteneur
-CMD ["nginx", "-g", "daemon off;"]
+ENTRYPOINT ["/usr/sbin/nginx", "-g", "daemon off;"]
