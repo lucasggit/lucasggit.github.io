@@ -1,0 +1,14 @@
+steps:
+#Update the container image using kubectl set
+- name: 'gcr.io/cloud-builders/kubectl'
+  args:
+  - 'set'
+  - 'image'
+  - 'deployment/site-vitrine'
+  - 'frontend=europe-west3-docker.pkg.dev/coinwave/site-vitrine-repo/frontend:latest'
+  env:
+  - 'CLOUDSDK_COMPUTE_ZONE=europe-west2-a'
+  - 'CLOUDSDK_CONTAINER_CLUSTER=cluster-prod'
+  
+options:
+    substitution_option: 'ALLOW_LOOSE'
