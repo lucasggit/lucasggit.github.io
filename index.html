@@ -56,6 +56,7 @@
 									<li class="menu-item"><a class="menu-link nav-link" href="#contact">Contact</a></li>
 								</ul>
 							</nav>
+
 						</div><!-- .header-navbar @e -->
 					</div>                                                
 				</div>
@@ -68,7 +69,7 @@
                         <div class="row align-items-center justify-content-center justify-content-lg-between gutter-vr-30px">
                             <div class="col-lg-6 order-lg-last">
                                 <div class="team-photo team-photo-s5 animated" data-animate="fadeInUp" data-delay=".8">
-                                    <img src="images/IMG_6372 copy.jpg" alt="Lucas GRARD">
+                                     <img src="images/IMG_6372 copy.jpg" alt="Lucas GRARD" loading="lazy">
                                 </div>
                             </div><!-- .col -->
                             <div class="col-xl-5 col-lg-6 col-sm-10 text-center text-lg-left">
@@ -122,7 +123,7 @@
                         <div class="row justify-content-between align-items-center gutter-vr-40px">
                            <div class="col-lg-6 order-lg-last">
                                <div class="gfx py-4 animated" data-animate="fadeInUp" data-delay="0.2">
-                                    <img src="images/stocks.gif" alt="Statistiques">
+                                     <img src="images/stocks.gif" alt="Statistiques" loading="lazy">
                                 </div>
                            </div>
                             <div class="col-lg-5">
@@ -159,25 +160,25 @@
                 </div>
                     <div class="nk-block block-partners">
                         <ul class="has-carousel partner-list justify-content-center animated" data-items="7" data-items-mobile="2" data-auto="true" data-loop="true" data-animate="fadeInUp" data-delay="0.75">
-                            <li class="partner-logo"><img src="images/skills/angular.png" alt="Logo Angular"></li>
-                            <li class="partner-logo"><img src="images/skills/Ansible.svg" alt="Logo Ansible"></li>
-                            <li class="partner-logo"><img src="images/skills/Debian.png" alt="Logo Debian"></li>
-                            <li class="partner-logo"><img src="images/skills/centos.png" alt="Logo CentOS"></li>
-                            <li class="partner-logo"><img src="images/skills/docker.png" alt="Logo Docker"></li>
-                            <li class="partner-logo"><img src="images/skills/gcp.png" alt="Logo Google Cloud Platform"></li>
-                            <li class="partner-logo"><img src="images/skills/gns3.png" alt="Logo GNS3"></li>
-                            <li class="partner-logo"><img src="images/skills/Grafan.png" alt="Logo Grafana"></li>
+                            <li class="partner-logo"><img src="images/skills/angular.png" alt="Logo Angular" loading="lazy"></li>
+                            <li class="partner-logo"><img src="images/skills/Ansible.svg" alt="Logo Ansible" loading="lazy"></li>
+                            <li class="partner-logo"><img src="images/skills/Debian.png" alt="Logo Debian" loading="lazy"></li>
+                            <li class="partner-logo"><img src="images/skills/centos.png" alt="Logo CentOS" loading="lazy"></li>
+                            <li class="partner-logo"><img src="images/skills/docker.png" alt="Logo Docker" loading="lazy"></li>
+                            <li class="partner-logo"><img src="images/skills/gcp.png" alt="Logo Google Cloud Platform" loading="lazy"></li>
+                            <li class="partner-logo"><img src="images/skills/gns3.png" alt="Logo GNS3" loading="lazy"></li>
+                            <li class="partner-logo"><img src="images/skills/Grafan.png" alt="Logo Grafana" loading="lazy"></li>
                         </ul>
                     </div>
                 <div class="nk-block block-partners">
                     <ul class="has-carousel partner-list justify-content-center animated" data-items="7" data-items-mobile="2" data-auto="true" data-loop="true" data-animate="fadeInUp" data-delay="0.75">
-                        <li class="partner-logo"><img src="images/skills/kubernetes.png" alt="Logo Kubernetes"></li>
-                        <li class="partner-logo"><img src="images/skills/nodejs.png" alt="Logo Node.js"></li>
-                        <li class="partner-logo"><img src="images/skills/prometheus.png" alt="Logo Prometheus"></li>
-                        <li class="partner-logo"><img src="images/skills/python.png" alt="Logo Python"></li>
-                        <li class="partner-logo"><img src="images/skills/redhat.png" alt="Logo Red Hat"></li>
-                        <li class="partner-logo"><img src="images/skills/symfony.png" alt="Logo Symfony"></li>
-                        <li class="partner-logo"><img src="images/skills/Vagrant.png" alt="Logo Vagrant"></li>
+                        <li class="partner-logo"><img src="images/skills/kubernetes.png" alt="Logo Kubernetes" loading="lazy"></li>
+                        <li class="partner-logo"><img src="images/skills/nodejs.png" alt="Logo Node.js" loading="lazy"></li>
+                        <li class="partner-logo"><img src="images/skills/prometheus.png" alt="Logo Prometheus" loading="lazy"></li>
+                        <li class="partner-logo"><img src="images/skills/python.png" alt="Logo Python" loading="lazy"></li>
+                        <li class="partner-logo"><img src="images/skills/redhat.png" alt="Logo Red Hat" loading="lazy"></li>
+                        <li class="partner-logo"><img src="images/skills/symfony.png" alt="Logo Symfony" loading="lazy"></li>
+                        <li class="partner-logo"><img src="images/skills/Vagrant.png" alt="Logo Vagrant" loading="lazy"></li>
                     </ul>
                 </div>
                     <!-- Block @e -->
@@ -406,9 +407,10 @@
     
     
 	<!-- preloader -->
-	<div class="preloader preloader-alt no-split"><span class="spinner spinner-alt"><img class="spinner-brand" src="images/4x.gif" alt="Chargement"></span></div>
+	<div class="preloader preloader-alt no-split"><span class="spinner spinner-alt"><img class="spinner-brand" src="images/4x.gif" alt="Chargement" loading="lazy"></span></div>
 	
 	<!-- JavaScript -->
+	<script src="https://unpkg.com/scrollreveal"></script>
 	<script src="assets/js/jquery.bundle.js?ver=1930"></script>
 	<script src="assets/js/scripts.js?ver=1930"></script>
 	<script src="assets/js/charts.js"></script>
@@ -427,6 +429,17 @@
 			if (ageElement) {
 				ageElement.textContent = age;
 			}
+		});
+
+		// Initialize ScrollReveal
+		ScrollReveal().reveal('.animated', { // Cible tous les éléments avec la classe 'animated'
+			distance: '20px',
+			opacity: 0,
+			duration: 800,
+			interval: 100, // Délai entre chaque élément révélé dans un groupe
+			random: true, // Applique les animations de manière aléatoire
+			reset: false, // Ne pas réinitialiser les animations si l'élément sort du viewport
+			viewFactor: 0.2 // Déclenche l'animation lorsque 20% de l'élément est visible
 		});
 	</script>
 </body>
